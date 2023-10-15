@@ -8,21 +8,21 @@ namespace SplitBillClassLibrary
 {
     public class SplitBillClass
     {
-        public int noOfPersons { get; set; }
-        public int totalMealCost { get; set; }
+        public int NoOfPersons { get; set; }
+        public int TotalMealCost { get; set; }
         public float Tip { get; set; }
 
         public Dictionary<string, decimal> AmountSummary()
         {
             Console.WriteLine("Please enter the no:of persons : ");
-            noOfPersons = Convert.ToInt32(Console.ReadLine());
+            NoOfPersons = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the total amount : ");
-            var totalMealCost = Convert.ToInt32(Console.ReadLine());
+            TotalMealCost = Convert.ToInt32(Console.ReadLine());
             Dictionary<string, decimal> amountDict = new Dictionary<string, decimal>();
             string name = "";
             decimal amount = 0;
             Console.WriteLine("Please enter the name and cost of each persons : ");
-            for (int i = 0; i < noOfPersons; i++)
+            for (int i = 0; i < NoOfPersons; i++)
             {
                 name = Console.ReadLine();
                 amount = Convert.ToInt32(Console.ReadLine());
@@ -51,7 +51,7 @@ namespace SplitBillClassLibrary
 
         public int AmountDetails() 
         {
-            var amountForPerson = totalMealCost / noOfPersons;
+            var amountForPerson = TotalMealCost / NoOfPersons;
             return amountForPerson;
         }
     }
